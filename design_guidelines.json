@@ -1,0 +1,144 @@
+{
+  "app_name": "Equaliser",
+  "personality": "Fusion: 7 Dark-First Utility structure + 5 Brutalist Mobile UI + 3 Editorial display typography",
+  "personality_one_liner": "A stark, minimalist audio utility pairing elegant serif titles with purely functional, dot-matrix infused hardware interfaces on pitch-black screens.",
+  "color": {
+    "surface": "#000000",
+    "onSurface": "#FFFFFF",
+    "surfaceSecondary": "#111111",
+    "onSurfaceSecondary": "#FFFFFF",
+    "surfaceTertiary": "#1A1A1A",
+    "onSurfaceTertiary": "#A0A0A0",
+    "surfaceInverse": "#FFFFFF",
+    "onSurfaceInverse": "#000000",
+    "brand": "#FF2A2A",
+    "brandPrimary": "#FF2A2A",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#FFFFFF",
+    "onBrandSecondary": "#000000",
+    "brandTertiary": "#222222",
+    "onBrandTertiary": "#FFFFFF",
+    "success": "#00FF00",
+    "onSuccess": "#000000",
+    "warning": "#FFB800",
+    "onWarning": "#000000",
+    "error": "#FF2A2A",
+    "onError": "#FFFFFF",
+    "info": "#FFFFFF",
+    "onInfo": "#000000",
+    "border": "#333333",
+    "borderStrong": "#FFFFFF",
+    "divider": "#222222",
+    "muted": "#666666",
+    "onBrand": "#FFFFFF"
+  },
+  "typography": {
+    "displayFontFamily": "Playfair Display",
+    "textFontFamily": "Space Mono",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous negative space, use rigid structural paddings.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 4,
+    "md": 8,
+    "lg": 16,
+    "pill": 999
+  },
+  "shadow_tier": "0",
+  "navigation": "stack_only",
+  "icon_set": "Feather",
+  "glassmorphism": {
+    "enabled": false,
+    "do's": [],
+    "dont's": [
+      "Do not use blur or glass effects. Rely on pure opacity and #111111 vs #000000 for depth."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Login",
+      "purpose": "Minimalist entry point for users to sign up or log in.",
+      "states": {
+        "loading": "Screen centered loading text in mono font with blinking cursor.",
+        "empty": "N/A",
+        "error": "Mono text error banner at the top in #FF2A2A."
+      },
+      "layout": "Pure black screen. Large 'Equaliser' serif title centered or top-aligned. Bottom-anchored pill-shaped buttons for Google and Apple login using white borders and transparent backgrounds."
+    },
+    {
+      "name": "DeviceSetup",
+      "purpose": "Select headphone model and firmware to configure the AI EQ.",
+      "states": {
+        "loading": "Loading dropdown options.",
+        "empty": "N/A",
+        "error": "Missing device? Show link to feedback form."
+      },
+      "layout": "Black screen, white borders. 3 cascading dropdowns (Manufacturer, Headphones, Firmware) styled as sharp rectangles with white 1px borders. 2 radio buttons for 8 or 10 bands. Sticky bottom 'Optimize EQ' button (pure white bg, black text, or disabled dark grey)."
+    },
+    {
+      "name": "EQSettings",
+      "purpose": "Main active interface for live parametric EQ adjustments.",
+      "states": {
+        "loading": "Detecting playing song...",
+        "empty": "No song playing detected.",
+        "error": "Unable to connect to AI server."
+      },
+      "layout": "Header: Serif title, 'Test' A/B switch. Segmented control (Simple/Advanced/Explore) as outlined pills. Central: Dark rounded graph panel (#111111 bg) showing EQ curve with white dot nodes (selected red). Frequency axis at bottom (20, 50, 100... mono font). Below graph: Horizontal scroll of vertical pill-shaped outlined sliders with white knobs. Active slider is #FF2A2A. Bottom controls: F and Q pills with red indicator line. Large red rounded square Reset button, undo/redo pills."
+    },
+    {
+      "name": "AdminFeedback",
+      "purpose": "List of user-reported missing devices and admin controls.",
+      "states": {
+        "loading": "Fetching feedback...",
+        "empty": "No missing devices reported.",
+        "error": "Failed to load admin panel."
+      },
+      "layout": "List view of missing devices. Simple input fields for admin to add Manufacturer/Model/Firmware. Toggle switch (white track, black knob) for enabling custom AI API keys."
+    }
+  ],
+  "images": {
+    "headphones_hero": {
+      "url": "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxzdHVkaW8lMjBoZWFkcGhvbmVzJTIwb24lMjBibGFjayUyMGJhY2tncm91bmR8ZW58MHx8fGJsYWNrfDE3OTExMTYxMzN8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "studio headphones on black background"
+    },
+    "sound_waves_abstract": {
+      "url": "https://images.unsplash.com/photo-1567360425618-1594206637d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHNvdW5kJTIwd2F2ZXMlMjBibGFjayUyMGFuZCUyMHJlZHxlbnwwfHx8YmxhY2t8MTc5MTExNjEzM3ww&ixlib=rb-4.1.0&q=85",
+      "alt": "abstract sound waves in red and black"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use 'Playfair Display' or 'Cormorant Garamond' for the main 'Equaliser' title to fulfill the serif requirement, but strictly use 'Space Mono' (or similar monospace) for all other UI elements, labels, and numbers to achieve the 'Nothing-brand-like / dot-matrix' vibe.",
+    "The background must be pure black (#000000). Panels like the EQ graph should be very dark grey (#111111) to create depth without relying on shadows or glassmorphism (which are disabled for this app).",
+    "Use the exact #FF2A2A red color for active selected states (e.g., selected dot node, selected vertical slider pill, Reset button). Use 1px #FFFFFF borders for most inactive controls.",
+    "Implement the vertical EQ sliders as pill shapes (border-radius: 999) with 1px white outlines. Ensure the knob is white when inactive and the slider track/knob uses the red accent when active.",
+    "Keep paddings rigid and negative space generous. The UI should look like a piece of high-end, brutalist audio hardware.",
+    "Ensure standard Native UI components like dropdowns are re-styled to fit the monochrome/brutalist theme (no default system colors)."
+  ]
+}
